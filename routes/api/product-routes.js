@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
+//TODO: Fix - Post - update
 
 // get all products
 router.get('/', async (req, res) => {
@@ -58,7 +59,7 @@ router.post('/', async (req, res) => {
       }); 
       res.status(200).json(productData);
      }catch(err){
-      res.status.apply(400).json(err);
+      res.status(400).json(err);
      }
   Product.create(req.body)
     .then((product) => {

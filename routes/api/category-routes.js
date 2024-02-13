@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
+//TODO: Fix - Post - update
 
 router.get('/', async(req, res) => {
   // find all categories
@@ -43,11 +44,11 @@ router.post('/', async (req, res) => {
   });
   res.status(200).json(categoryData);
  }catch(err){
-  res.status.apply(400).json(err);
+  res.status(400).json(err);
  }
 });
 
-router.put('/:id', async(req, res) => { //TODO: Finish this
+router.put('/:id', async(req, res) => { 
   // update a category by its `id` value
   try{
     const categoryData = await Category.update({

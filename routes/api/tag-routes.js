@@ -43,7 +43,7 @@ router.post('/', async (req, res) => { //TODO: review line 42
     }); //{ tag_id: req.body.tag_id, }
     res.status(200).json(tagData);
    }catch(err){
-    res.status.apply(400).json(err);
+    res.status(400).json(err);
    }
 });
 
