@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
-//TODO: Fix - Post - update
+//TODO: Fix - Post - update - 
 
 // get all products
 router.get('/', async (req, res) => {
