@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
-//TODO: Fix - update - 
+
 router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
@@ -51,7 +51,11 @@ router.post('/', async (req, res) => {
 router.put('/:id', async(req, res) => {
   // update a tag's name by its `id` value
   try{
-    const tagData = await Tag.update({
+    const tagData = await Tag.update(
+      {
+        tag_name: req.body.tag_name,
+      },
+      {
       where:{
         id: req.params.id,
       },
