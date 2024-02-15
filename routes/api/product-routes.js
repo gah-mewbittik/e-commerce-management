@@ -54,15 +54,11 @@ router.post('/', async (req, res) => {
           product_name: req.body.product_name,
           price: req.body.price,
           stock: req.body.stock,
-          
+          category_id: req.body.category_id,
+          //tagIds: [1, 2, 3, 4],
         
       }); 
-    //   res.status(200).json(productData);
-    //  }catch(err){
-    //   res.status(400).json(err);
-    //  }
-  // Product.create(req.body)
-  //   .then((product) => {
+    
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds && req.body.tagIds.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
@@ -74,7 +70,10 @@ router.post('/', async (req, res) => {
         await ProductTag.bulkCreate(productTagIdArr);
       }
       // if no product tags, just respond
-      res.status(200).json(productData);
+      const updatedProductData = await Product.findByPk(productData.id, {
+        include: [{model: Tag}],
+      })
+      res.status(200).json(updatedProductData);
     // 
   }catch(err){
     console.log(err);
@@ -83,9 +82,9 @@ router.post('/', async (req, res) => {
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update product data
-  Product.update(req.body, {
+  const productData = await Product.update(req.body, {
     where: {
       id: req.params.id,
     },
