@@ -11,9 +11,9 @@ The following is an image of the data output from a method request made using Ex
 ![Alt text](./assets/categories%20data.png)
 
 
-The Following image are example of the tables generated from the application used to create and/or access the table data.
+The Following image is example of the data retrieved from Insomnia used to create and/or access the data.
 
-![Alt text](./assets/images/tablesExample.png)
+![Alt text](./assets/getProducts.png)
 
 
 
