@@ -23,7 +23,7 @@ N/A
 
 ## Usage
 
-To view the application in action, simply click the following link: https://drive.google.com/file/d/11e0dDcWaP8geiLbNgYljBslwtKgidfn0/view?usp=drive_link
+To view the application in action, simply click the following link: https://drive.google.com/file/d/1wbtactipYlINTBvX2FTbzxVdu4D_w1od/view?usp=drive_link
 The link will redirect you to a video demonstration of the application in action. The e-commerce-management application functionality allows the management specific data using Express js methods that allow the user to view, create, update or delete data. 
 
 ## Credits
